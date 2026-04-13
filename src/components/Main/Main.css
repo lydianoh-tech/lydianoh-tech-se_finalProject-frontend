@@ -1,0 +1,34 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main__hero {
+  position: relative;
+  /* Solid dark fallback for when the background image cannot load */
+  background-color: #1a1b22;
+  background-image:
+    linear-gradient(rgba(26, 27, 34, 0.5) 0%, rgba(26, 27, 34, 0.5) 100%),
+    url('https://code.s3.yandex.net/react-developer/news-explorer/news-explorer-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.main__error {
+  padding: 80px 104px;
+  background: #f5f6f7;
+  text-align: center;
+}
+
+.main__error-text {
+  font-size: 18px;
+  color: #ff6464;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .main__error {
+    padding: 32px 16px;
+  }
+}
