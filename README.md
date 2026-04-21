@@ -97,3 +97,4 @@ src/
 ├── index.css             # Global reset & Google Fonts import
 └── main.jsx              # App entry point
 ```
+# lydianoh-tech-se_finalProject-frontend
