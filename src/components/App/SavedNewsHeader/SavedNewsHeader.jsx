@@ -1,20 +1,25 @@
-import Header from '../Header/Header';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import './SavedNewsHeader.css';
+import Header from "../Header/Header";
+import { useCurrentUser } from "../../../contexts/CurrentUserContext";
+import "./SavedNewsHeader.css";
 
-function SavedNewsHeader({ savedArticles, isLoggedIn, onLoginClick, onLogout }) {
+function SavedNewsHeader({
+  savedArticles,
+  isLoggedIn,
+  onLoginClick,
+  onLogout,
+}) {
   const { currentUser } = useCurrentUser();
 
   const keywords = Array.from(
-    new Set(savedArticles.map((a) => a.keyword).filter(Boolean))
+    new Set(savedArticles.map((a) => a.keyword).filter(Boolean)),
   );
 
   const keywordSummary =
     keywords.length === 0
-      ? 'No keywords'
+      ? "No keywords"
       : keywords.length <= 2
-      ? keywords.join(', ')
-      : `${keywords[0]}, ${keywords[1]}, and ${keywords.length - 2} other${keywords.length - 2 > 1 ? 's' : ''}`;
+        ? keywords.join(", ")
+        : `${keywords[0]}, ${keywords[1]}, and ${keywords.length - 2} other${keywords.length - 2 > 1 ? "s" : ""}`;
 
   return (
     <div className="saved-news-header">
@@ -28,13 +33,12 @@ function SavedNewsHeader({ savedArticles, isLoggedIn, onLoginClick, onLogout }) 
         <p className="saved-news-header__eyebrow">Saved articles</p>
         <h1 className="saved-news-header__title">
           {currentUser?.name
-            ? `${currentUser.name}, you have ${savedArticles.length} saved article${savedArticles.length !== 1 ? 's' : ''}`
-            : `${savedArticles.length} saved article${savedArticles.length !== 1 ? 's' : ''}`}
+            ? `${currentUser.name}, you have ${savedArticles.length} saved article${savedArticles.length !== 1 ? "s" : ""}`
+            : `${savedArticles.length} saved article${savedArticles.length !== 1 ? "s" : ""}`}
         </h1>
         {savedArticles.length > 0 && (
           <p className="saved-news-header__keywords">
-            By keywords:{' '}
-            <strong>{keywordSummary}</strong>
+            By keywords: <strong>{keywordSummary}</strong>
           </p>
         )}
       </div>

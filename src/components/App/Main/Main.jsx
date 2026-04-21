@@ -1,26 +1,33 @@
-import { useState, useCallback } from 'react';
-import Header from '../Header/Header';
-import SearchForm from '../SearchForm/SearchForm';
-import NewsCardList from '../NewsCardList/NewsCardList';
-import Preloader from '../Preloader/Preloader';
-import NothingFound from '../NothingFound/NothingFound';
-import About from '../About/About';
-import Footer from '../Footer/Footer';
-import { searchNews } from '../../utils/NewsApi';
-import './Main.css';
+import { useState, useCallback } from "react";
+import Header from "../Header/Header";
+import { CurrentUserContext } from "../../../contexts/CurrentUserContext";
+import SearchForm from "../SearchForm/SearchForm";
+import NewsCardList from "../NewsCardList/NewsCardList";
+import Preloader from "../Preloader/Preloader";
+import NothingFound from "../NothingFound/NothingFound";
+import About from "../../About/About";
+import Footer from "../Footer/Footer";
+import { searchNews } from "../../../utils/NewsApi";
+import "./Main.css";
 
-function Main({ isLoggedIn, savedArticles, onSaveArticle, onLoginClick, onLogout }) {
+function Main({
+  isLoggedIn,
+  savedArticles,
+  onSaveArticle,
+  onLoginClick,
+  onLogout,
+}) {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
-  const [searchError, setSearchError] = useState('');
-  const [keyword, setKeyword] = useState('');
+  const [searchError, setSearchError] = useState("");
+  const [keyword, setKeyword] = useState("");
 
   const handleSearch = useCallback((kw) => {
     setKeyword(kw);
     setIsLoading(true);
     setHasSearched(true);
-    setSearchError('');
+    setSearchError("");
     setArticles([]);
 
     searchNews(kw)
@@ -28,7 +35,9 @@ function Main({ isLoggedIn, savedArticles, onSaveArticle, onLoginClick, onLogout
         setArticles(data.articles || []);
       })
       .catch((err) => {
-        setSearchError(err.message || 'Something went wrong. Please try again.');
+        setSearchError(
+          err.message || "Something went wrong. Please try again.",
+        );
       })
       .finally(() => {
         setIsLoading(false);
@@ -51,9 +60,7 @@ function Main({ isLoggedIn, savedArticles, onSaveArticle, onLoginClick, onLogout
 
       {!isLoading && hasSearched && searchError && (
         <section className="main__error">
-          <p className="main__error-text">
-            {searchError}
-          </p>
+          <p className="main__error-text">{searchError}</p>
         </section>
       )}
 

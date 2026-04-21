@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import PopupWithForm from '../PopupWithForm/PopupWithForm';
+import { useState } from "react";
+import PopupWithForm from "../../About/PopupWithForm/PopupWithForm";
 
 function RegisterPopup({ onClose, onSubmit, onSwitchToLogin }) {
-  const [values, setValues] = useState({ email: '', password: '', name: '' });
-  const [errors, setErrors] = useState({ email: '', password: '', name: '' });
+  const [values, setValues] = useState({ email: "", password: "", name: "" });
+  const [errors, setErrors] = useState({ email: "", password: "", name: "" });
 
   const isValid =
-    values.email.trim() !== '' &&
-    values.password.trim() !== '' &&
-    values.name.trim() !== '' &&
+    values.email.trim() !== "" &&
+    values.password.trim() !== "" &&
+    values.name.trim() !== "" &&
     !errors.email &&
     !errors.password &&
     !errors.name;
@@ -34,12 +34,14 @@ function RegisterPopup({ onClose, onSubmit, onSwitchToLogin }) {
       submitText="Sign up"
       isValid={isValid}
       altAction={{
-        question: 'Already have an account?',
-        label: 'Sign in',
+        question: "Already have an account?",
+        label: "Sign in",
         onClick: onSwitchToLogin,
       }}
     >
-      <label className="popup__label" htmlFor="register-email">Email</label>
+      <label className="popup__label" htmlFor="register-email">
+        Email
+      </label>
       <input
         id="register-email"
         type="email"
@@ -53,7 +55,9 @@ function RegisterPopup({ onClose, onSubmit, onSwitchToLogin }) {
       />
       <span className="popup__input-error">{errors.email}</span>
 
-      <label className="popup__label" htmlFor="register-password">Password</label>
+      <label className="popup__label" htmlFor="register-password">
+        Password
+      </label>
       <input
         id="register-password"
         type="password"
@@ -68,7 +72,9 @@ function RegisterPopup({ onClose, onSubmit, onSwitchToLogin }) {
       />
       <span className="popup__input-error">{errors.password}</span>
 
-      <label className="popup__label" htmlFor="register-name">Username</label>
+      <label className="popup__label" htmlFor="register-name">
+        Username
+      </label>
       <input
         id="register-name"
         type="text"

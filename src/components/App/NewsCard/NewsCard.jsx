@@ -1,27 +1,27 @@
-import { useState } from 'react';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import './NewsCard.css';
+import { useState } from "react";
+import { useCurrentUser } from "../../../contexts/CurrentUserContext";
+import "./NewsCard.css";
 
-function NewsCard({ article, isSaved, onSave, showDeleteBtn = false, onDelete, keyword }) {
+function NewsCard({
+  article,
+  isSaved,
+  onSave,
+  showDeleteBtn = false,
+  onDelete,
+  keyword,
+}) {
   const { isLoggedIn } = useCurrentUser();
   const [showTooltip, setShowTooltip] = useState(false);
 
-  const {
-    urlToImage,
-    publishedAt,
-    source,
-    title,
-    description,
-    url,
-  } = article;
+  const { urlToImage, publishedAt, source, title, description, url } = article;
 
   const formattedDate = publishedAt
-    ? new Date(publishedAt).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
+    ? new Date(publishedAt).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
       })
-    : '';
+    : "";
 
   function handleSaveClick() {
     onSave({ ...article, keyword });
@@ -46,7 +46,7 @@ function NewsCard({ article, isSaved, onSave, showDeleteBtn = false, onDelete, k
             alt={title}
             className="news-card__image"
             onError={(e) => {
-              e.target.style.display = 'none';
+              e.target.style.display = "none";
             }}
           />
         )}
@@ -69,9 +69,9 @@ function NewsCard({ article, isSaved, onSave, showDeleteBtn = false, onDelete, k
           )}
           <button
             type="button"
-            className={`news-card__save-btn${isSaved ? ' news-card__save-btn_saved' : ''}`}
+            className={`news-card__save-btn${isSaved ? " news-card__save-btn_saved" : ""}`}
             onClick={handleSaveClick}
-            aria-label={isSaved ? 'Remove from saved' : 'Save article'}
+            aria-label={isSaved ? "Remove from saved" : "Save article"}
           >
             <span className="news-card__save-icon" />
           </button>

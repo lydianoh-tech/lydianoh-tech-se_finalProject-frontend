@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import NewsCard from '../NewsCard/NewsCard';
-import { MAX_DISPLAY_CARDS } from '../../utils/constants';
-import './NewsCardList.css';
+import { useState } from "react";
+import NewsCard from "../NewsCard/NewsCard";
+import { MAX_DISPLAY_CARDS } from "../../../utils/constants";
+import "./NewsCardList.css";
 
 function NewsCardList({ articles, savedArticles, onSaveArticle, keyword }) {
   const [visibleCount, setVisibleCount] = useState(MAX_DISPLAY_CARDS);

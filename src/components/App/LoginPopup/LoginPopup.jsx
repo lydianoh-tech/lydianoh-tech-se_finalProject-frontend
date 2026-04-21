@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import PopupWithForm from '../PopupWithForm/PopupWithForm';
+import { useState } from "react";
+import PopupWithForm from "../../About/PopupWithForm/PopupWithForm";
 
 function LoginPopup({ onClose, onSubmit, onSwitchToRegister }) {
-  const [values, setValues] = useState({ email: '', password: '' });
-  const [errors, setErrors] = useState({ email: '', password: '' });
+  const [values, setValues] = useState({ email: "", password: "" });
+  const [errors, setErrors] = useState({ email: "", password: "" });
 
   const isValid =
-    values.email.trim() !== '' &&
-    values.password.trim() !== '' &&
+    values.email.trim() !== "" &&
+    values.password.trim() !== "" &&
     !errors.email &&
     !errors.password;
 
@@ -33,11 +33,13 @@ function LoginPopup({ onClose, onSubmit, onSwitchToRegister }) {
       isValid={isValid}
       altAction={{
         question: "Don\u2019t have an account?",
-        label: 'Sign up',
+        label: "Sign up",
         onClick: onSwitchToRegister,
       }}
     >
-      <label className="popup__label" htmlFor="login-email">Email</label>
+      <label className="popup__label" htmlFor="login-email">
+        Email
+      </label>
       <input
         id="login-email"
         type="email"
@@ -51,7 +53,9 @@ function LoginPopup({ onClose, onSubmit, onSwitchToRegister }) {
       />
       <span className="popup__input-error">{errors.email}</span>
 
-      <label className="popup__label" htmlFor="login-password">Password</label>
+      <label className="popup__label" htmlFor="login-password">
+        Password
+      </label>
       <input
         id="login-password"
         type="password"

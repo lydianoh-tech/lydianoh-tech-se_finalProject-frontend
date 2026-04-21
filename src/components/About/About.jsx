@@ -1,10 +1,12 @@
-import './About.css';
+import "./About.css";
 
 function About() {
   return (
     <section className="about">
       <div className="about__avatar" aria-hidden="true">
-        <span className="about__avatar-initials">NE</span>
+        <span className="about__avatar-initials">
+          <img src="path/to/avatar.jpg" alt="Author's avatar" />
+        </span>
       </div>
       <div className="about__content">
         <h2 className="about__title">About the author</h2>
