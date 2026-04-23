@@ -9,8 +9,12 @@ import About from "../../About/About";
 import Footer from "../Footer/Footer";
 import { searchNews } from "../../../utils/NewsApi";
 import "./Main.css";
+import NewsCard from "../NewsCard/NewsCard";
 
 function Main({
+  handleCardClick,
+  handleCardLike,
+  handleDeleteClick,
   isLoggedIn,
   savedArticles,
   onSaveArticle,
@@ -76,7 +80,6 @@ function Main({
           keyword={keyword}
         />
       )}
-
       <About />
       <Footer />
     </div>

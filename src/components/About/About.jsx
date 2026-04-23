@@ -1,27 +1,35 @@
 import "./About.css";
+import myPHOTO from "../../assets/my-photo.jpg";
 
 function About() {
   return (
-    <section className="about">
-      <div className="about__avatar" aria-hidden="true">
-        <span className="about__avatar-initials">
-          <img src="path/to/avatar.jpg" alt="Author's avatar" />
-        </span>
-      </div>
-      <div className="about__content">
-        <h2 className="about__title">About the author</h2>
-        <p className="about__text">
-          News Explorer is a project built as part of the TripleTen Software
-          Engineering program. This frontend application lets you search for the
-          latest news articles from around the world using the News API. Simply
-          type a keyword into the search box, and the app will fetch and display
-          relevant articles published within the last seven days.
-        </p>
-        <p className="about__text">
-          Sign in to save your favorite articles and revisit them later on your
-          personal Saved Articles page. All your saved articles are grouped by
-          the keyword you used when you saved them.
-        </p>
+    <section className="about-section" id="about">
+      <div className="about-section__container">
+        <div className="about-section__portrait">
+          <img
+            src={myPHOTO}
+            alt="Lydia Noh"
+            className="about-section__portrait-image"
+          />
+        </div>
+
+        <div className="about-section__content">
+          <h2 className="about-section__author">About the author</h2>
+          <p className="about-section__text">
+            My name is Lydia Noh, and I am a Computer Science student at the
+            University of Maryland Global Campus (UMGC) and a software developer
+            with a strong interest in full-stack web development and cloud
+            technologies. I am currently building my skills to become a
+            well-rounded software engineer, with hands-on experience in both
+            frontend and backend development. I have worked with a variety of
+            technologies, including JavaScript, React, Node.js, Express,
+            MongoDB, PostgreSQL, as well as tools like Git, REST APIs, and
+            JSON-based data systems. I am also familiar with Java, C++, Python,
+            network security, and SQL, and I continue to expand my knowledge in
+            software engineering principles, system design, and scalable
+            application development.
+          </p>
+        </div>
       </div>
     </section>
   );
