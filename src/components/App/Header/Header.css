@@ -43,6 +43,12 @@
   gap: 42px;
 }
 
+.header__nav-links {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
 .header__nav-link {
   font-family: Roboto;
   font-weight: 500;
