@@ -15,13 +15,13 @@ A React application that allows users to search for news articles by keyword usi
 
 ## Tech stack
 
-| Layer | Technology |
-|-------|-----------|
-| UI framework | React 19 (Vite) |
-| Routing | React Router v7 |
-| API | [newsapi.org](https://newsapi.org/) |
-| Styling | Plain CSS modules |
-| Linting | ESLint with react-hooks + react-refresh plugins |
+| Layer        | Technology                                      |
+| ------------ | ----------------------------------------------- |
+| UI framework | React 19 (Vite)                                 |
+| Routing      | React Router v7                                 |
+| API          | [newsapi.org](https://newsapi.org/)             |
+| Styling      | Plain CSS modules                               |
+| Linting      | ESLint with react-hooks + react-refresh plugins |
 
 ## Getting started
 
@@ -38,15 +38,6 @@ cd lydianoh-tech-se_finalProject_frondend
 npm install
 ```
 
-### 3. Configure your News API key
-
-Copy the example env file and add your free key from [newsapi.org](https://newsapi.org/register):
-
-```bash
-cp .env.example .env.local
-# then edit .env.local and replace the placeholder with your key
-```
-
 ```
 VITE_NEWS_API_KEY=your_news_api_key_here
 ```
@@ -61,12 +52,12 @@ The app is served at `http://localhost:5173` by default.
 
 ## Available scripts
 
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start Vite dev server |
-| `npm run build` | Production build to `dist/` |
+| Script            | Description                          |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Start Vite dev server                |
+| `npm run build`   | Production build to `dist/`          |
 | `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint across all source files |
+| `npm run lint`    | Run ESLint across all source files   |
 
 ## Project structure
 
@@ -97,4 +88,8 @@ src/
 ├── index.css             # Global reset & Google Fonts import
 └── main.jsx              # App entry point
 ```
+
 # lydianoh-tech-se_finalProject-frontend
+
+url: https://lydianewsexplorer.crabdance.com
+url: http://www.lydianewsexplorer.crabdance.com

@@ -3,13 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://lydianoh-tech.github.io/lydianoh-tech-se_finalProject_frondend",
+  "homepage": "https://lydianewsexplorer.com",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
+    "deploy": "npm run build && ssh lydia28abeck@34.73.112.40 \"mkdir -p /var/www/lydianewsexplorer\" && scp -r ./dist/* lydia28abeck@34.73.112.40:/var/www/lydianewsexplorer/",
+    "deploy": "npm run build && scp -r ./dist/* lydia28abeck@lydianewsexplorer.crabdance.com:/home/lydia28abeck/frontend/",
     "lint": "eslint .",
-    "deploy": "gh-pages -d dist",
-    "predeploy": "npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -25,7 +25,6 @@
     "eslint": "^9.39.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
-    "gh-pages": "^6.3.0",
     "globals": "^17.4.0",
     "vite": "^8.0.4"
   }

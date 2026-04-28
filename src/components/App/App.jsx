@@ -1,6 +1,7 @@
 import { useState, useCallback } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import * as auth from "../../utils/auth";
 import Main from "./Main/Main";
 import SavedNews from "./SavedNews/SavedNews";
 import LoginPopup from "./LoginPopup/LoginPopup";
@@ -13,6 +14,22 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [savedArticles, setSavedArticles] = useState([]);
   const [activePopup, setActivePopup] = useState("");
+
+  const handleRegistration = ({
+    username,
+    email,
+    password,
+    confirmPassword,
+  }) => {
+    if (password === confirmPassword) {
+      auth
+        .register(username, password, email)
+        .then(() => {
+          // TODO: handle succesful registration
+        })
+        .catch(console.error);
+    }
+  };
 
   const closePopup = useCallback(() => setActivePopup(""), []);
 
@@ -99,7 +116,7 @@ function App() {
         {activePopup === "register" && (
           <RegisterPopup
             onClose={closePopup}
-            onSubmit={handleRegisterSubmit}
+            onSubmit={handleRegistration}
             onSwitchToLogin={() => setActivePopup("login")}
           />
         )}

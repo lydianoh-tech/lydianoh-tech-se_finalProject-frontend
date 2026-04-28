@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/lydianoh-tech-se_finalProject_frondend/",
+  base: "/",
   plugins: [react()],
   server: {
     port: 3000,
