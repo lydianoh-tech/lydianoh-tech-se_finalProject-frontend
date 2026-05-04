@@ -1,0 +1,46 @@
+.info-tooltip__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 36px;
+}
+
+.info-tooltip__icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #4caf50;
+  color: #fff;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.info-tooltip__title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #1a1b22;
+  margin: 0 0 24px;
+  max-width: 320px;
+}
+
+.info-tooltip__signin-btn {
+  background: #2f71e5;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 18px 88px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.info-tooltip__signin-btn:hover {
+  background: #347ef0;
+}

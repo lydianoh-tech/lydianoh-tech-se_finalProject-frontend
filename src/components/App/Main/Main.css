@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main__hero {
+  position: relative;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(95, 148, 255, 0.38),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 12%,
+      rgba(24, 160, 251, 0.28),
+      transparent 24%
+    ),
+    linear-gradient(180deg, rgba(5, 20, 41, 0.16), rgba(5, 20, 41, 0.72)),
+    url(/src/assets/background-image.jpg) center / cover;
+  background-size: cover;
+  background-position: center;
+}
+
+.main__error {
+  padding: 80px 104px;
+  background: #f5f6f7;
+  text-align: center;
+}
+
+.main__error-text {
+  font-size: 18px;
+  color: #ff6464;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .main__error {
+    padding: 32px 16px;
+  }
+}
